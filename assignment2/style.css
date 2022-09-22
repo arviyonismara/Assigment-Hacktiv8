@@ -1,0 +1,136 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: whitesmoke;
+    font: 16px/28px arial;
+}
+.navbar{
+    height: 40px;
+    background-color: white;
+    text-align: right;
+    box-shadow: 0px 0px 3px rgb(0, 0, 0, .5);
+}
+
+.navbar .menu {
+    justify-content: right;
+    margin-right: 20px;
+    padding-top: 7px;
+}
+.navbar .menu a{
+    text-decoration: none;
+    color: rgb(40, 40, 40);
+    padding-left: 8px;
+}
+
+.container {
+    width: 80%;
+    height: auto;
+    margin: 0 auto;
+}
+
+.profile{
+    /* height: auto; */
+    justify-content: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    background-color: white;
+    box-shadow: 0px 1px 5px rgb(0, 0, 0, .5);
+    display: flex;
+}
+
+.profile .isi{
+    display: flex;
+}
+
+.isi .kiri{
+    /* width: 50vw; */
+    height: auto;
+    margin: 20px auto;
+    padding: 0px 40px;
+    display: flex;
+}
+
+.gambar img{
+    max-width: 200px;
+    height: auto;
+}
+
+.name-group .nama1 {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.data .job{
+    font-weight: bold;
+}
+
+.button .button1{
+    width: 80px;
+    height: 40px;
+    padding: 10px auto;
+    background-color: blue;
+    color: white;
+    border-radius: 4px;
+}
+.button .button2{
+    width: 80px;
+    height: 40px;
+    padding: 10px auto;
+    background-color: white;
+    color: green;
+    border-radius: 4px;
+    border: 2px solid green;
+}
+
+.isi .kanan{
+    width: auto;
+    display: flex;
+    margin: 20px auto;
+}
+.kanan .content{
+    font-weight: bold;
+    padding-right: 60px;
+}
+
+form{
+    background-color: white;
+    box-shadow: 0px 1px 5px rgb(0, 0, 0, .5);
+    margin: 40px auto;
+    display: flex;
+    flex-direction: column;
+}
+form label{
+    font-weight: bold;
+}
+
+form input{
+    height: 25px;
+    margin-bottom: 10px;
+}
+
+form .submit{
+    background-color: green;
+    height: 25px;
+    color: white;
+    border: none;
+    border-radius: 3px;
+}
+
+@media screen and (max-width: 1000px){
+    /* .profile{
+        flex-direction: column;
+    } */
+    .isi{
+        flex-direction: column;
+    }
+    .isi .kiri{
+        flex-direction: column;
+    }
+    .kiri .data{
+        text-align: center
+    }
+    .kiri .gambar{
+        margin: 20px auto;
+    }
+
+}

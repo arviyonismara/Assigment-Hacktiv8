@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Assignment 2</title>
+</head>
+<body>
+    <div class="navbar">
+        <div class="menu">
+            <a href="">HOME</a>
+            <a href="">PRODUCT </a>
+            <a href="">GALLERY</a>
+            <a href="">BLOG</a>
+            <a href="">MY INVENTORY</a>
+        </div>
+    </div>
+    <div class="container">
+        <div class="profile">
+            <div class="isi">
+                <div class="kiri">
+                    <div class="gambar">
+                        <img src="img/user.jpeg" alt="">
+                    </div>
+                    <div class="data">
+                        <div class="name-group">
+                            <p class="nama1" id="nama"></p>
+                            <p class="job" id="job"></p>
+                        </div>
+                        <div class="button">
+                            <button class="button1">Kontak</button>
+                            <button class="button2">Resume</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="kanan">
+                    <div class="content">
+                        <p>Availability</p>
+                        <p>usia</p>
+                        <p>Lokasi</p>
+                        <p>Pengalaman</p>
+                        <p>email</p>
+                    </div>
+                    <div>
+                        <p id="availabel"></p>
+                        <p id="old"></p>
+                        <p id="city"></p>
+                        <p id="exp"></p>
+                        <p id="email1"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <form onsubmit="submitForm()">
+            <label for="name">Nama</label>
+            <input type="text" id="name" placeholder="masukan Nama ..." />
+            
+            <label for="role">Role</label>
+            <input type="text" id="role" />
+            
+            <label for="availability">Availability</label>
+            <input type="text" id="availability" />
+            
+            <label for="usia">Usia</label>
+            <input type="text" id="usia" />
+            
+            <label for="lokasi">Lokasi</label>
+            <input type="text" id="lokasi" />
+            
+            <label for="years">Years Experience</label>
+            <input type="text" id="years" />
+            
+            <label for="email">Email</label>
+            <input type="text" id="email" />
+            
+            <input type="submit" value="Submit" class="submit">
+        </form>
+        <script>
+            function submitForm(){
+                event.preventDefault();
+
+                const name = document.getElementById("name").value;
+                document.getElementById("nama").innerText = name;
+                const role = document.getElementById("role").value;
+                document.getElementById("job").innerText = role;
+                const availabel = document.getElementById("availability").value;
+                document.getElementById("availabel").innerText = availabel;
+                const usia = document.getElementById("usia").value;
+                document.getElementById("old").innerText = usia;
+                const lokasi = document.getElementById("lokasi").value;
+                document.getElementById("city").innerText = lokasi;
+                const years = document.getElementById("years").value;
+                document.getElementById("exp").innerText = years;
+                const email = document.getElementById("email").value;
+                document.getElementById("email1").innerText = email;
+            }
+        </script>
+    </div>
+</body>
+</html>
