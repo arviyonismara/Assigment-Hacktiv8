@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //   function urutHuruf(inputString) {
+      //     const arrayString = inputString.split("");
+      //     return arrayString.sort().join("");
+      //   }
+
+      //   console.log(urutHuruf("saya"));
+      //   console.log(urutHuruf("akumasuk"));
+
+      function urutHuruf(text) {
+        let textString = text.split("");
+        let abjad = [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "f",
+          "g",
+          "h",
+          "i",
+          "j",
+          "k",
+          "l",
+          "m",
+          "n",
+          "o",
+          "p",
+          "q",
+          "r",
+          "s",
+          "t",
+          "u",
+          "v",
+          "w",
+          "x",
+          "y",
+          "z",
+        ];
+        for (let i = 0; i < textString.length; i++) {
+          for (let j = 0; j < textString.length - 1; j++) {
+            if (
+              abjad.indexOf(textString[j]) > abjad.indexOf(textString[j + 1])
+            ) {
+              let tmp = textString[j];
+              textString[j] = textString[j + 1];
+              textString[j + 1] = tmp;
+            }
+          }
+        }
+      }
+      console.log(urutHuruf("saya"));
+      console.log(urutHuruf("akumasuk"));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://kit.fontawesome.com/e387e799bf.js" crossorigin="anonymous"></script>
+    <script src="script.js" defer></script>
+    <title>Covid Assignment 3</title>
+  </head>
+  <body>
+    <div class="container">
+      <p class="title"><i class="fa-solid fa-virus-covid"></i>  Covid-19 Tracker</p class="title">
+      <div>
+        <input type="text" id="input" />
+        <button id="button">Get Data</button>
+      </div>
+      <div class="data-container">
+        <div class="card">
+            <i class="fa-solid fa-viruses fa-3x"></i>
+          <p>Active Cases</p>
+          <p id="active">0</p>
+        </div>
+        <div class="card">
+            <i class="fa-solid fa-arrow-trend-up fa-3x"></i>
+          <p>New Cases</p>
+          <p id="new">0</p>
+        </div>
+        <div class="card">
+            <i class="fa-solid fa-heart-circle-check fa-3x"></i>
+          <p>Reovered Cases</p>
+          <p id="recovered">0</p>
+        </div>
+        <div class="card">
+            <i class="fa-regular fa-hospital fa-3x"></i>
+          <p>Total Cases</p>
+          <p id="total">0</p>
+        </div>
+        <div class="card">
+            <i class="fa-solid fa-skull-crossbones fa-3x"></i>
+          <p>Death Cases</p>
+          <p id="death">0</p>
+        </div>
+        <div class="card">
+            <i class="fa-solid fa-syringe fa-3x"></i>
+          <p>Test Cases</p>
+          <p id="test">0</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

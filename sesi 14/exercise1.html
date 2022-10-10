@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function compareNumbers(firstNumber, secondNumber) {
+        // if (secondNumber > firstNumber) {
+        //   return true;
+        // } else if (firstNumber > secondNumber) {
+        //   return false;
+        // } else {
+        //   return -1;
+        // }
+        const hasil =
+          secondNumber > firstNumber
+            ? true
+            : firstNumber > secondNumber
+            ? false
+            : -1;
+        return hasil;
+      }
+
+      console.log(compareNumbers(4, 4));
+    </script>
+  </body>
+</html>

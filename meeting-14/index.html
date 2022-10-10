@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="kota"></div>
+    <div id="tanggal"></div>
+    <div id="sunrise"></div>
+    <div id="sunset"></div>
+    <div id="moonrise"></div>
+    <div id="moonset"></div>
+
+    <div id="nama"></div>
+    <div id="usia"></div>
+    <div id="domisili"></div>
+
+    <button id="bandung" value="bandung">bandung</button>
+
+    <script>
+        var dataKota = 'Jakarta';
+
+        const options = {
+            method: 'GET',
+            headers: {
+                'X-RapidAPI-Key': '971cd449c7mshea7cc92a6c4c238p199d11jsnaf386070d5e7',
+                'X-RapidAPI-Host': 'weatherapi-com.p.rapidapi.com'
+            }
+        };
+
+        fetch(`https://weatherapi-com.p.rapidapi.com/astronomy.json?q=${dataKota}`, options)
+        //ini berarti return response.json
+            .then((response) => response.json())
+            // then kedua gak wajib return. manipulasi dom bisa dilakukan di then kedua
+            .then((response) => {
+                document.getElementById('kota').innerHTML = response.location.name
+                document.getElementById('tanggal').innerHTML = response.location.localtime
+                document.getElementById('sunrise').innerHTML = response.astronomy.astro.sunrise
+                document.getElementById('sunset').innerHTML = response.astronomy.astro.sunset
+                document.getElementById('moonrise').innerHTML = response.astronomy.astro.moonrise
+                document.getElementById('moonset').innerHTML = response.astronomy.astro.moonset
+            })
+            .catch(err => console.error(err));
+
+
+            //
+            function testFunction () {
+
+            }
+
+            //short mode jika dia return nilainya sudah pasti, tanpa ada kondisional atau logic lainnya
+            const arrowFunction = () => 20
+
+            console.log(arrowFunction(), 'ini arrow function')
+
+        var buttonBandung = document.querySelector('#bandung')
+
+        // buttonBandung.addEventListener('click', function(event) {
+        //     event.preventDefault()
+        //     dataKota = buttonBandung.value
+        //     fetch(`https://weatherapi-com.p.rapidapi.com/astronomy.json?q=${dataKota}`, options)
+        //         .then((response) => response.json())
+        //         .then((response) => {
+        //             document.getElementById('kota').innerHTML = response.location.name
+        //             document.getElementById('tanggal').innerHTML = response.location.localtime
+        //             document.getElementById('sunrise').innerHTML = response.astronomy.astro.sunrise
+        //             document.getElementById('sunset').innerHTML = response.astronomy.astro.sunset
+        //             document.getElementById('moonrise').innerHTML = response.astronomy.astro.moonrise
+        //             document.getElementById('moonset').innerHTML = response.astronomy.astro.moonset
+        //         })
+        //         .catch(err => console.error(err));
+        // })
+        buttonBandung.addEventListener('click', async function(event) {
+            event.preventDefault()
+            dataKota = buttonBandung.value
+            try {
+                const response = await fetch(`https://weatherapi-com.p.rapidapi.com/astronomy.json?q=${dataKota}`, options)
+                const data = await response.json()
+                document.getElementById('kota').innerHTML = data.location.name
+                document.getElementById('tanggal').innerHTML = data.location.localtime
+                document.getElementById('sunrise').innerHTML = data.astronomy.astro.sunrise
+                document.getElementById('sunset').innerHTML = data.astronomy.astro.sunset
+                document.getElementById('moonrise').innerHTML = data.astronomy.astro.moonrise
+                document.getElementById('moonset').innerHTML = data.astronomy.astro.moonset
+            } catch (error) {
+                console.log(error);
+            }
+        })
+    </script>
+</body>
+</html>
